@@ -1,0 +1,42 @@
+body {
+    background-color: white;
+    vertical-align: top;
+  }
+  
+  h4 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  p {
+      text-align: center;
+      font-size: 16px;
+  }
+  
+  button {
+    padding: 20px;
+    margin: 24px;
+    font-size: 24px;
+    background-color: rgb(4, 160, 144);
+    border-radius: 50px;
+  }
+
+  .outerbox {
+      padding:15px;
+  }
+
+  .mainbox {
+      display: block;
+      -ms-flex-align: center;
+      align-items: center;
+      text-align: center;
+      background-color: white;
+      width: 90%;
+  }
+
+  .questionPrompt {
+      font-size: 24px;
+      font-weight: 300;
+  }
+
