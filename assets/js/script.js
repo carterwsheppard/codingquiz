@@ -56,7 +56,10 @@ var quizTaking = function() {
 if (i < questions.length && currentScore > 0) {
 // get the id of the button click
 var btnID = event.target.getAttribute("id");
-var questionAnswer = questions[i-1].answer;
+
+//********TROUBLESHOOTING HERE --> trying to get question answers to match up and change correctly but getting some unexpected behavior *********
+
+var questionAnswer = questions[i].answer;
 console.log("questionanswer" + questionAnswer)
 questionPrompt.textContent = questions[i].prompt;
    if (btnID === questionAnswer) {
