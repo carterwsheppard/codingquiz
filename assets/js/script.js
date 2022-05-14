@@ -17,22 +17,22 @@ var questions = [
 },
 
 {
-    prompt: "What does CSS 2 stand for? \n(a) Carter's Styling Stuff\n(b) Cascading Style Sheet\n(c) Coding Style Sheet\n(d) None of the Above"
+    prompt: "What does HTML stand for? \n(a) Hello Text Madeup Language\n(b) Hyperlink Text Meaning Language\n(c) Hypertext Markup Language \n(d) None of the Above"
+    ,answer:"c"
+},
+
+{
+    prompt: "What does the <p> in this div stand for? \n(a) Paragraph\n(b) Parenthesis\n(c) Partition\n(d) None of the Above"
+    ,answer:"a"
+},
+
+{
+    prompt: "What is JQuery? \n(a) A software consulting service\n(b) An open source API based on JavaScript\n(c) An Open Source API based on CSS\n(d) None of the Above"
     ,answer:"b"
 },
 
 {
-    prompt: "What does CSS 3 stand for? \n(a) Carter's Styling Stuff\n(b) Cascading Style Sheet\n(c) Coding Style Sheet\n(d) None of the Above"
-    ,answer:"b"
-},
-
-{
-    prompt: "What does CSS 4 stand for? \n(a) Carter's Styling Stuff\n(b) Cascading Style Sheet\n(c) Coding Style Sheet\n(d) None of the Above"
-    ,answer:"b"
-},
-
-{
-    prompt: "What does HTML stand for? \n(a) Carter's Styling Stuff\n(b) Cascading Style Sheet\n(c) Coding Style Sheet\n(d) None of the Above"
+    prompt: "What is Bootstrap? \n(a) A software consulting service\n(b) An open source API based on JavaScript\n(c) An Open Source API based on CSS\n(d) None of the Above"
     ,answer:"c"
 }
 ]
