@@ -8,6 +8,7 @@ var btnzEl = document.querySelector("#btnz");
 var questionPrompt = document.querySelector("#questionPrompt");
 var currentScore = 60;
 var i = 0;
+var quizStarted = false;
 var questions = [
     
     {
@@ -44,7 +45,7 @@ var quizStart = function() {
     if (i===0) {
         questionPrompt.textContent = questions[i].prompt;
         questionAnswer = questions[i].answer;
-        i++
+        quizStarted = true;
 //set timer to count down
 var startTimer = setInterval(function(event) {
     if (currentScore >= 1) {
@@ -70,18 +71,20 @@ var startTimer = setInterval(function(event) {
 //MAIN QUIZ FUNCTION
 
 var quizTaking = function() {
-if (i < questions.length && currentScore > 0) {
+if (i < questions.length && currentScore > 0 && quizStarted) {
 // get the id of the button click
 var btnID = event.target.getAttribute("id");
+console.log("works")
 
 //********TROUBLESHOOTING HERE --> trying to get question answers to match up and change correctly but getting some unexpected behavior *********
 
 var questionAnswer = questions[i].answer;
-console.log("questionanswer" + questionAnswer)
+//console.log("questionanswer" + questionAnswer)
 //questionPrompt.textContent = questions[i].prompt;
    if (btnID === questionAnswer) {
         currentScore = currentScore + 10;  
         scoreEl.textContent = currentScore;
+        i++;
     };
     if (btnID !== questionAnswer) {
         currentScore = currentScore - 10;
@@ -91,7 +94,7 @@ console.log("questionanswer" + questionAnswer)
     if (currentScore < 0) {
         window.prompt("Sorry - you're out of time! Hit refresh to try again.")
     };
-    i++;
+    //i++;
     
    if(i < questions.length){
        var questionPrompt2 = questions[i].prompt;
@@ -128,12 +131,12 @@ var quizOver = function() {
 
 var mainFunction = function() {
     var btnID = event.target.getAttribute("id");
-    if (i === 0) {
+    if (!quizStarted) {
         quizStart();
     }
-    //else if (i === questions.length) {
-     //   quizOver();
-   // }
+    else if (i === questions.length-1) {
+       quizOver();
+    }
     else {
         quizTaking();
 }
