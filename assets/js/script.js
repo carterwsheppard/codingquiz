@@ -58,7 +58,7 @@ var startTimer = setInterval(function(event) {
       window.alert("Sorry - you're out of time! Hit refresh to try again.")
       return false
     }
-    if (i === questions.length) {
+    if (i === questions.length-1) {
         clearInterval(startTimer);
     }
   }, 1000);
@@ -74,13 +74,9 @@ var quizTaking = function() {
 if (i < questions.length && currentScore > 0 && quizStarted) {
 // get the id of the button click
 var btnID = event.target.getAttribute("id");
-console.log("works")
-
-//********TROUBLESHOOTING HERE --> trying to get question answers to match up and change correctly but getting some unexpected behavior *********
 
 var questionAnswer = questions[i].answer;
-//console.log("questionanswer" + questionAnswer)
-//questionPrompt.textContent = questions[i].prompt;
+
    if (btnID === questionAnswer) {
         currentScore = currentScore + 10;  
         scoreEl.textContent = currentScore;
@@ -124,6 +120,7 @@ var quizOver = function() {
         localStorage.setItem("highScore",finalScore);
         window.alert("Congratulations! " + finalScore + " is a new record!")
     }
+    return false
 }
 
 
